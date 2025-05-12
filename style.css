@@ -8,7 +8,8 @@
 /* —— body + fonts —— */
 body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: #333;
+  color: #000000;
+  background: #FFFFFF;
   display: flex;
   justify-content: center;
 }
@@ -16,6 +17,7 @@ body {
 .page-wrapper {
   width: 90%;
   max-width: 900px;
+  background: #FFFFFF;
 }
 
 /* header */
@@ -23,6 +25,7 @@ body {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 10px;
+  background: #FFFFFF;
 }
 
 .logo {
@@ -34,6 +37,7 @@ body {
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 10px;
+  color: #000000;
 }
 
 /* category filter */
@@ -46,29 +50,32 @@ body {
   width: 100%;
   padding: 16px;
   font-size: 18px;
-  border: 2px solid #000;
+  border: 2px solid #000000;
   border-radius: 8px;
   cursor: pointer;
-  background-color: white;
+  background-color: #FFFFFF;
   font-weight: 500;
+  color: #000000;
 }
 
 .search-section select:focus {
   outline: none;
-  border-color: #666;
+  border-color: #E3A535;
 }
 
 /* chat section */
 .chatbox {
   margin: 40px 0;
-  border: 2px solid #000;
+  border: 2px solid #000000;
   border-radius: 8px;
   padding: 26px;
+  background: #FFFFFF;
 }
 
 .chatbox h2 {
   font-size: 20px;
   margin-bottom: 20px;
+  color: #000000;
 }
 
 .chat-window {
@@ -77,8 +84,11 @@ body {
   line-height: 1.5;
   height: 250px;
   overflow-y: auto;
-  background: #fafafa;
+  background: #FFFFFF;
   margin-bottom: 20px;
+  border: 1.5px solid #E3A535;
+  border-radius: 8px;
+  color: #000000;
 }
 
 /* placeholder message */
@@ -86,8 +96,9 @@ body {
   width: 100%;
   text-align: center;
   padding: 40px;
-  color: #666;
+  color: #E3A535;
   font-size: 18px;
+  background: #FFFFFF;
 }
 
 /* input row */
@@ -102,19 +113,20 @@ body {
   padding: 12px;
   font-size: 18px;
   border: none;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #E3A535;
   background: transparent;
+  color: #000000;
 }
 
 .chat-form input:focus {
   outline: none;
-  border-bottom-color: #000;
+  border-bottom-color: #FF003B;
 }
 
 .chat-form button {
   font-size: 18px;
-  background: #000;
-  color: #fff;
+  background: #FF003B;
+  color: #FFFFFF;
   border: none;
   padding: 12px;
   width: 48px;
@@ -124,14 +136,16 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: background 0.3s;
+  border-radius: 8px;
 }
 
 .chat-form button:hover {
-  background: #666666;
+  background: #E3A535;
+  color: #000000;
 }
 
 .chat-form button:focus {
-  outline: 2px solid #000;
+  outline: 2px solid #FF003B;
   outline-offset: 2px;
 }
 
@@ -153,7 +167,8 @@ body {
   margin: 60px 0 40px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #E3A535;
+  background: #FFFFFF;
 }
 
 .site-footer nav {
@@ -162,12 +177,12 @@ body {
 
 .site-footer a {
   margin: 0 8px;
-  color: #000;
+  color: #FF003B;
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: #666666;
+  color: #E3A535;
 }
 
 /* products grid */
@@ -176,16 +191,31 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   margin: 30px 0;
+  background: #FFFFFF;
 }
 
 .product-card {
   flex: 0 1 calc(33.333% - 14px);
-  border: 1px solid #ccc;
+  border: 2px solid #E3A535;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 8px;
   display: flex;
   gap: 15px;
   min-height: 160px;
+  background: #FFFFFF;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.product-card.selected {
+  border: 2.5px solid #FF003B;
+  background: #FFF6F8;
+  box-shadow: 0 0 0 2px #FF003B;
+}
+
+.product-card:hover {
+  border-color: #FF003B;
+  box-shadow: 0 4px 16px rgba(227, 165, 53, 0.13);
 }
 
 .product-card img {
@@ -193,6 +223,9 @@ body {
   height: 110px;
   object-fit: contain;
   flex-shrink: 0;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #E3A535;
 }
 
 .product-card .product-info {
@@ -206,24 +239,54 @@ body {
 .product-card h3 {
   font-size: 16px;
   margin-bottom: 8px;
+  color: #000000;
 }
 
 .product-card p {
   font-size: 14px;
-  color: #666;
+  color: #E3A535;
+}
+
+/* description overlay on hover */
+.product-desc-overlay {
+  display: none;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+  background: #FFFFFF;
+  border: 2px solid #FF003B;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(227, 165, 53, 0.13);
+  padding: 16px;
+  font-size: 15px;
+  color: #000000;
+  min-width: 220px;
+  max-width: 320px;
+  min-height: 80px;
+  max-height: 220px;
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+.product-card:hover .product-desc-overlay {
+  display: block;
 }
 
 /* selected products */
 .selected-products {
   margin: 40px 0;
   padding: 20px;
-  border: 2px solid #000;
+  border: 2px solid #E3A535;
   border-radius: 8px;
+  background: #FFFFFF;
 }
 
 .selected-products h2 {
   font-size: 20px;
   margin-bottom: 20px;
+  color: #000000;
 }
 
 #selectedProductsList {
@@ -232,24 +295,65 @@ body {
   gap: 10px;
 }
 
+/* Remove (X) button for selected products */
+.remove-selected-btn {
+  background: #FF003B;
+  border: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.remove-selected-btn:hover {
+  background: #E3A535;
+  color: #000000;
+}
+
+/* Clear All button */
+#clearSelectedBtn {
+  margin: 10px 0 0 0;
+  padding: 8px 16px;
+  background: #E3A535;
+  border: 1.5px solid #FF003B;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000000;
+  transition: background 0.2s, color 0.2s;
+}
+
+#clearSelectedBtn:hover {
+  background: #FF003B;
+  color: #FFFFFF;
+}
+
+/* Generate Routine button */
 .generate-btn {
   width: 100%;
   margin-top: 20px;
   padding: 16px;
   font-size: 18px;
   font-weight: 500;
-  color: #fff;
-  background: #000;
+  color: #FFFFFF;
+  background: #FF003B;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .generate-btn:hover {
-  background: #666;
+  background: #E3A535;
+  color: #000000;
 }
 
 .generate-btn i {
   margin-right: 8px;
+  color: #E3A535;
 }
